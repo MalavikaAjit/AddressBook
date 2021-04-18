@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class Main {
     //Scanner scan = new Scanner(System.in);
     public ArrayList<Contact> contactList = new ArrayList<>();
-
+    ArrayList<AddressBook> addressBookList = new ArrayList<>();
     public void addContact(Scanner scan) {
         System.out.println("Add Details ");
         System.out.println("Enter First Name");
@@ -127,6 +127,21 @@ public class Main {
                 System.out.println("please enter valid name");
         }
     }
+    public void addAddressBook(Scanner scan)
+    {
+        System.out.println("Enter AddressBook Name");
+        String bookName = scan.next();
+        AddressBook addressbook = new AddressBook(bookName);
+        addressBookList.add(addressbook);
+    }
+    public void displayAddressBook()
+    {
+        System.out.println("AddressBook Names are : ");
+
+        for (AddressBook addressBookList : addressBookList) {
+            System.out.println(addressBookList);
+        }
+    }
     public static void main(String[] args) {
         System.out.println("Welcome To The Address Book Problem");
         Scanner scan = new Scanner(System.in);
@@ -141,7 +156,9 @@ public class Main {
                     + "2.Edit contact\n"
                     + "3.Display contact\n"
                     + "4.Remove contact\n"
-                    + "5.Exit\n");
+                    + "5.Add Address book\n"
+                    + "6.Display Address book\n"
+                    + "7.Exit\n");
             int choice = scan.nextInt();
             scan.nextLine();
             switch (choice) {
@@ -158,6 +175,12 @@ public class Main {
                     main.deleteContact(scan);
                     break;
                 case 5:
+                    main.addAddressBook(scan);
+                    break;
+                case 6:
+                    main.displayAddressBook();
+                    break;
+                case 7:
                     System.out.println("Exit");
                     loop = false;
                     break;
