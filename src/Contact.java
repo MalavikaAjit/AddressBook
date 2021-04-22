@@ -8,7 +8,6 @@ public class Contact {
     long mobileNo;
     int zip;
 
-
     public Contact(String firstName, String lastName, String address, String city, String state, String email, long mobileNo, int zip) {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -20,7 +19,6 @@ public class Contact {
         this.zip = zip;
 
     }
-
     public String getFirstName() {
         return firstName;
     }
