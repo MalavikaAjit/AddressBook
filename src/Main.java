@@ -64,8 +64,8 @@ public class Main {
         System.out.println("Welcome To The Address Book Problem");
         Scanner scan = new Scanner(System.in);
         System.out.println("enter address book name");
-        main.bookName=scan.next();
-        main.addressBookLists.put(main.bookName, new AddressBook());
+        String bookName=scan.next();
+        main.addressBookLists.put(bookName, new AddressBook());
         main.accessOptions(scan);
     }
 }
